@@ -28,11 +28,12 @@ const CreateNote = () => {
             setNoteContent("");
             setNoteTopic("");
             setCreationToggle(!creationToggle);
+            setOpenNote(false)
           })
           .catch((err) => {
             console.log(err.response);
           });
-        setOpenNote(false)
+        
     }
     return (
       <Dialog
