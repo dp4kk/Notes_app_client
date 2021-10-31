@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import FirebaseContext from "./Firebase/FirebaseContext";
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import Dashboard from "./Pages/Dashboard";
+import Login from './Pages/Login'
+import SignUp from "./Pages/Signup";
+import PrivateRoute from "./Firebase/PrivateRoute";
+import DataContext from "./Context/DataContext";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+    <FirebaseContext>
+    <DataContext>
+      <Router>
+        <Switch>
+          <PrivateRoute exact path='/' component={Dashboard}/>
+          <Route path='/login' component={Login}/>
+          <Route path='/signup' component={SignUp}/>
+        </Switch>
+      </Router>
+      </DataContext>
+   </FirebaseContext>
+   </React.Fragment>
   );
 }
 
