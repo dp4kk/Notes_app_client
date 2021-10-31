@@ -16,7 +16,7 @@ const CreateNote = () => {
 
     const handleSubmit=async(e)=>{
        e.preventDefault()
-        await axios
+         axios
           .post("https://reactnotes-app.herokuapp.com/savenote", {
             creator: currentUser.displayName,
             title: noteTopic,
