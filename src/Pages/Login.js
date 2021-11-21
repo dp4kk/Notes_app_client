@@ -60,6 +60,10 @@ const Login = () => {
     setPassword("");
   };
 
+  const handleGuest=()=>{
+    setEmail("guestuser123@test.com")
+    setPassword('guestuser123')
+  }
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -116,6 +120,15 @@ const Login = () => {
               sx={{ mt: 3, mb: 2 }}
             >
               Login
+            </Button>
+            <Button
+              type="button"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 0, mb: 2 }}
+              onClick={handleGuest}
+            >
+              Guest Credential
             </Button>
             <Grid container>
               <Grid item>

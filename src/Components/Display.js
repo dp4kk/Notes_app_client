@@ -125,7 +125,7 @@ const Display = () => {
                 <Card
                   variant="outlined"
                   sx={{
-                    maxWidth: 200,
+                    maxWidth: 300,
                     margin: "10px",
                     backgroundColor: "#FFFF8F",
                   }}
